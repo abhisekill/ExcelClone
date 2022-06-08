@@ -1,0 +1,98 @@
+*{
+    margin: 0px;   
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.menu-cont{
+    border: 0.5px solid;
+    height: 30px;
+    background-color: whitesmoke;
+}
+
+.address-cont{
+    border: 0.5px solid;
+    height: 30px;
+    background-color: white;
+}
+
+.cell-cont{
+    border: 0.5px solid;
+    height: 88vh;
+    overflow: auto;
+    background-color: lightgreen;
+    position: relative;
+}
+
+.sheets{
+    border: 0.5px solid;
+    height: 30px;
+    background-color: lightcoral;
+}
+.row{
+    display: flex;
+}
+.cell{
+    border: 0.1px solid;
+    min-height: 30px;
+    width: 100px;
+    outline: none;
+    padding: auto;
+}
+
+.top-left-cell{
+    border-right: 0.1px solid;
+    border-bottom: 0.1px solid;
+    height: 30px;
+    width: 30px;
+    background-color: lightgray;
+    position: absolute;
+    z-index: 2;
+}
+
+.top-row{
+    position: absolute;
+    display: flex;
+    left: 30px;
+    background-color: lightgray;
+    z-index: 1;
+}
+
+.top-row-cell{
+    border-bottom: 0.1px solid;
+    border-left: 0.1px solid;
+    height: 30px;
+    width: 100px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.left-col{
+    background-color: lightgray;
+    position: absolute;
+    left: 0px;
+    top:30px;
+    z-index: 1;
+}
+
+.left-col-cell{
+    border: 0.1px solid;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.cells{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+#address-bar{
+    width: 60px;
+    text-align: center;
+}
+
+#formula-bar{
+    outline: none;
+}
