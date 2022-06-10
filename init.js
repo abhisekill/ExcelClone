@@ -44,7 +44,8 @@ function intiDB(){
                 address: address,
                 value : "",
                 formula:"",
-                children:[]
+                children:[],
+                parent:[]
             }
             row.push(cellObject);
         }

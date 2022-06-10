@@ -26,9 +26,11 @@ function solveFormula(formula, childCellObject) {
             const { rowId, colId } = getRowIdColIdFromAddress(comp);
             const cellObject = db[rowId][colId];
 
-            // pushing children to a cell
-            if(childCellObject)
+            // pushing children & parent to a cell
+            if(childCellObject){
                 cellObject.children.push(childCellObject.address);
+                childCellObject.parent.push(cellObject.address);
+            }
             console.log(cellObject);
 
             const value = cellObject.value;
@@ -56,5 +58,18 @@ function updateChildren(cellObject){
         // recursively call on cellObject's childrens
         updateChildren(childCellObject);
     }
+}
+
+function removeFormula(cellObj){
+    for(let i = 0; i<cellObj.parent.length; i++){
+        const parentAddress = cellObj.parent[i];
+        const {rowId,colId} = getRowIdColIdFromAddress(parentAddress);
+        const parentObj = db[rowId][colId];
+        const updatedChildren = parentObj.children.filter((child)=>{
+            return child != cellObj.address;
+        })
+        parentObj.children = updatedChildren;
+    }
+    cellObj.parent = [];
 }
 

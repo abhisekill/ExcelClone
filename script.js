@@ -42,6 +42,25 @@ for(let i = 0; i<allCells.length; i++){
         // console.log(cellObj);
         updateChildren(cellObj);
     })
+
+    allCells[i].addEventListener('keydown',(e)=>{
+        if(e.key == 'Backspace')
+        {
+            const cell = e.target;
+            const {rowId,colId} = getRowIdColId(cell);
+            const cellObj = db[rowId][colId];
+            if(cellObj.formula){
+                // update ui
+                cell.textContent = "";
+                formulaInput.value = "";
+                // update db
+                cellObj.value = "";
+                cellObj.formula = "";
+                removeFormula(cellObj);
+                console.log(cellObj);
+            }
+        }
+    })
 }
 
 formulaInput.addEventListener('blur',(e)=>{
@@ -55,6 +74,9 @@ formulaInput.addEventListener('blur',(e)=>{
         cellObject.formula = formula;
         // update ui
         lastSelectedCell.textContent = computedValue;
+
+        // update child value if formula is modified
+        updateChildren(cellObject);
     }
 })
 
