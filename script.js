@@ -19,6 +19,8 @@ cellContainerDiv.addEventListener('scroll',(e)=>{
 })
 
 for(let i = 0; i<allCells.length; i++){
+    // whenever a cell is clicked , show its address in address bar 
+    // and the formula associated with it in the formula bar
     allCells[i].addEventListener('click',(e)=>{
         const {rowId,colId} = getRowIdColId(e.target);
         const address = String.fromCharCode(colId+65) + (rowId+1) +"";
@@ -37,16 +39,17 @@ for(let i = 0; i<allCells.length; i++){
         if(cellObj.value == cellValue)
             return;
         cellObj.value = cellValue;
-        console.log(cellObj);
+        // console.log(cellObj);
+        updateChildren(cellObj);
     })
 }
 
 formulaInput.addEventListener('blur',(e)=>{
     const formula = e.target.value;
     if(formula){
-        const computedValue = solveFormula(formula);
         const {rowId,colId} = getRowIdColId(lastSelectedCell);
         const cellObject = db[rowId][colId];
+        const computedValue = solveFormula(formula,cellObject);
         // updatae db
         cellObject.value = computedValue;
         cellObject.formula = formula;

@@ -43,7 +43,8 @@ function intiDB(){
             const cellObject = {
                 address: address,
                 value : "",
-                formula:""
+                formula:"",
+                children:[]
             }
             row.push(cellObject);
         }
