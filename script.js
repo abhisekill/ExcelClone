@@ -68,6 +68,12 @@ formulaInput.addEventListener('blur',(e)=>{
     if(formula){
         const {rowId,colId} = getRowIdColId(lastSelectedCell);
         const cellObject = db[rowId][colId];
+
+         // if formula is already there in a cell and it is then changed
+        if(cellObject.formula){
+            removeFormula(cellObject);
+        }
+
         const computedValue = solveFormula(formula,cellObject);
         // updatae db
         cellObject.value = computedValue;
