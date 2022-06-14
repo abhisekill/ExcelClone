@@ -1,26 +1,31 @@
+:root{
+    --border-color:lightgray;
+    --cell-background-color:whitesmoke;
+}
+
 *{
     margin: 0px;   
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
 }
 
 .menu-cont{
-    border: 0.5px solid;
+    border-bottom: 0.5px solid var(--border-color);
     height: 30px;
-    background-color: whitesmoke;
 }
 
 .address-cont{
-    border: 0.5px solid;
-    height: 30px;
-    background-color: white;
+    height: 25px;
+    display: flex;
 }
 
 .cell-cont{
-    border: 0.5px solid;
+    border: 0.5px solid var(--border-color);
     height: calc(100vh - 90px);
     overflow: auto;
-    background-color: lightgreen;
+    background-color: white;
     position: relative;
 }
 
@@ -33,19 +38,19 @@
     display: flex;
 }
 .cell{
-    border: 0.1px solid;
-    min-height: 30px;
+    border-right: 0.1px solid var(--border-color);
+    border-bottom: 0.1px solid var(--border-color);
+    min-height: 23px;
     width: 100px;
     outline: none;
-    padding: auto;
 }
 
 .top-left-cell{
-    border-right: 0.1px solid;
-    border-bottom: 0.1px solid;
-    height: 30px;
-    width: 30px;
-    background-color: lightgray;
+    border-right: 0.1px solid var(--border-color);
+    border-bottom: 0.1px solid var(--border-color);
+    height: 23px;
+    width: 40px;
+    background-color: var(--cell-background-color);
     position: absolute;
     z-index: 2;
 }
@@ -53,46 +58,57 @@
 .top-row{
     position: absolute;
     display: flex;
-    left: 30px;
-    background-color: lightgray;
+    left: 40px;
     z-index: 1;
 }
 
 .top-row-cell{
-    border-bottom: 0.1px solid;
-    border-left: 0.1px solid;
-    height: 30px;
+    border-bottom: 0.1px solid var(--border-color);
+    border-right: 0.1px solid var(--border-color);
+    height: 23px;
     width: 100px;
-    background-color: lightgray;
-    text-align: center;
+    background-color: var(--cell-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .left-col{
-    background-color: lightgray;
+    background-color: var(--cell-background-color);
     position: absolute;
     left: 0px;
-    top:30px;
+    top:23px;
     z-index: 1;
 }
 
 .left-col-cell{
-    border: 0.1px solid;
-    height: 30px;
-    width: 30px;
-    text-align: center;
+    border-bottom: 0.1px solid var(--border-color);
+    border-right: 0.1px solid var(--border-color);
+    height: 23px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cells{
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 23px;
+    left: 40px;
 }
 
 #address-bar{
-    width: 60px;
+    width: 100px;
     text-align: center;
+    font-size: 13px;
+    border: white;
+    border-right: 0.1px solid var(--border-color);
 }
 
 #formula-bar{
     outline: none;
+    border: white;
+    width: 100vw;
+    padding: 5px;
+    font-size: 14px;
 }
