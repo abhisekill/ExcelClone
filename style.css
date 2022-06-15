@@ -55,7 +55,7 @@
 }
 
 .sheets-cont {
-    display: flex;
+  display: flex;
   height: 33px;
   background-color: var(--cell-background-color);
 }
@@ -142,46 +142,46 @@
 }
 
 .add-sheet {
-    margin-left: 30px;
-    text-align: center;
-    padding: 10px;
-    color: green;
-    cursor: pointer;
+  margin-left: 30px;
+  text-align: center;
+  padding: 10px;
+  color: green;
+  cursor: pointer;
 }
 
 .sheet-list {
-    display: flex;
-    width: 100%;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  align-items: center;
 }
 
 .sheet {
-    /* border: 0.1px solid black; */
-    height: 100%;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    cursor: pointer;
+  /* border: 0.1px solid black; */
+  height: 100%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.active-sheet{
-    border-left: 0.1px solid var(--border-color);
-    border-right: 0.1px solid var(--border-color);
-    background-color: white;
-    color: green;
+.active-sheet {
+  border-left: 0.1px solid var(--border-color);
+  border-right: 0.1px solid var(--border-color);
+  background-color: white;
+  color: green;
 }
 
-.active-cell{
+.active-cell {
   border: 2px solid green;
 }
 
-.active-cell-header{
+.active-cell-header {
   background-color: var(--border-color);
 }
 
-.font-style{
+.font-style {
   border-right: 0.1px solid var(--border-color);
   display: flex;
   height: 100%;
@@ -190,7 +190,7 @@
   align-items: center;
 }
 
-.font-style div{
+.font-style div {
   /* border: 0.1px solid; */
   height: 60%;
   width: 20%;
@@ -200,7 +200,12 @@
   cursor: pointer;
 }
 
-.font-style div:hover{
+.font-style div:hover {
+  background-color: var(--border-color);
+  border-radius: 5px;
+}
+
+.active-font-style {
   background-color: var(--border-color);
   border-radius: 5px;
 }

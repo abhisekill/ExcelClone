@@ -27,7 +27,7 @@ function solveFormula(formula, childCellObject) {
             const cellObject = db[rowId][colId];
 
             // pushing children & parent to a cell
-            if(childCellObject){
+            if (childCellObject) {
                 cellObject.children.push(childCellObject.address);
                 childCellObject.parent.push(cellObject.address);
             }
@@ -42,10 +42,10 @@ function solveFormula(formula, childCellObject) {
     return computedValue;
 }
 
-function updateChildren(cellObject){
-    for(let i = 0; i<cellObject.children.length; i++){
+function updateChildren(cellObject) {
+    for (let i = 0; i < cellObject.children.length; i++) {
         const childCellAddress = cellObject.children[i];
-        const {rowId,colId} = getRowIdColIdFromAddress(childCellAddress);
+        const { rowId, colId } = getRowIdColIdFromAddress(childCellAddress);
         const childCellObject = db[rowId][colId];
         const newValue = solveFormula(childCellObject.formula);
 
@@ -60,12 +60,12 @@ function updateChildren(cellObject){
     }
 }
 
-function removeFormula(cellObj){
-    for(let i = 0; i<cellObj.parent.length; i++){
+function removeFormula(cellObj) {
+    for (let i = 0; i < cellObj.parent.length; i++) {
         const parentAddress = cellObj.parent[i];
-        const {rowId,colId} = getRowIdColIdFromAddress(parentAddress);
+        const { rowId, colId } = getRowIdColIdFromAddress(parentAddress);
         const parentObj = db[rowId][colId];
-        const updatedChildren = parentObj.children.filter((child)=>{
+        const updatedChildren = parentObj.children.filter((child) => {
             return child != cellObj.address;
         })
         parentObj.children = updatedChildren;
