@@ -1,114 +1,171 @@
-:root{
-    --border-color:lightgray;
-    --cell-background-color:whitesmoke;
+:root {
+  --border-color: lightgray;
+  --cell-background-color: whitesmoke;
 }
 
-*{
-    margin: 0px;   
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.85rem;
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-.menu-cont{
-    border-bottom: 0.5px solid var(--border-color);
-    height: 30px;
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  border: 0.1px solid var(--border-color);
 }
 
-.address-cont{
-    height: 25px;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: grey;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85rem;
+}
+
+.menu-cont {
+  border-bottom: 0.5px solid var(--border-color);
+  height: 30px;
+}
+
+.address-cont {
+  height: 25px;
+  display: flex;
+}
+
+.cell-cont {
+  border: 0.5px solid var(--border-color);
+  border-bottom: white;
+  height: calc(100vh - 90px);
+  overflow: auto;
+  background-color: white;
+  position: relative;
+}
+
+.sheets-cont {
     display: flex;
+  height: 33px;
+  background-color: var(--cell-background-color);
 }
 
-.cell-cont{
-    border: 0.5px solid var(--border-color);
-    height: calc(100vh - 90px);
-    overflow: auto;
-    background-color: white;
-    position: relative;
+.row {
+  display: flex;
+}
+.cell {
+  border-right: 0.1px solid var(--border-color);
+  border-bottom: 0.1px solid var(--border-color);
+  min-height: 23px;
+  width: 100px;
+  outline: none;
 }
 
-.sheets{
-    border: 0.5px solid;
-    height: 30px;
-    background-color: lightcoral;
-}
-.row{
-    display: flex;
-}
-.cell{
-    border-right: 0.1px solid var(--border-color);
-    border-bottom: 0.1px solid var(--border-color);
-    min-height: 23px;
-    width: 100px;
-    outline: none;
+.top-left-cell {
+  border-right: 0.1px solid var(--border-color);
+  border-bottom: 0.1px solid var(--border-color);
+  height: 23px;
+  width: 40px;
+  background-color: var(--cell-background-color);
+  position: absolute;
+  z-index: 2;
 }
 
-.top-left-cell{
-    border-right: 0.1px solid var(--border-color);
-    border-bottom: 0.1px solid var(--border-color);
-    height: 23px;
-    width: 40px;
-    background-color: var(--cell-background-color);
-    position: absolute;
-    z-index: 2;
+.top-row {
+  position: absolute;
+  display: flex;
+  left: 40px;
+  z-index: 1;
 }
 
-.top-row{
-    position: absolute;
-    display: flex;
-    left: 40px;
-    z-index: 1;
+.top-row-cell {
+  border-bottom: 0.1px solid var(--border-color);
+  border-right: 0.1px solid var(--border-color);
+  height: 23px;
+  width: 100px;
+  background-color: var(--cell-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.top-row-cell{
-    border-bottom: 0.1px solid var(--border-color);
-    border-right: 0.1px solid var(--border-color);
-    height: 23px;
-    width: 100px;
-    background-color: var(--cell-background-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.left-col {
+  background-color: var(--cell-background-color);
+  position: absolute;
+  left: 0px;
+  top: 23px;
+  z-index: 1;
 }
 
-.left-col{
-    background-color: var(--cell-background-color);
-    position: absolute;
-    left: 0px;
-    top:23px;
-    z-index: 1;
+.left-col-cell {
+  border-bottom: 0.1px solid var(--border-color);
+  border-right: 0.1px solid var(--border-color);
+  height: 23px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.left-col-cell{
-    border-bottom: 0.1px solid var(--border-color);
-    border-right: 0.1px solid var(--border-color);
-    height: 23px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cells {
+  position: absolute;
+  top: 23px;
+  left: 40px;
 }
 
-.cells{
-    position: absolute;
-    top: 23px;
-    left: 40px;
+#address-bar {
+  width: 100px;
+  text-align: center;
+  font-size: 13px;
+  border: white;
+  border-right: 0.1px solid var(--border-color);
 }
 
-#address-bar{
-    width: 100px;
+#formula-bar {
+  outline: none;
+  border: white;
+  width: 100vw;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.add-sheet {
+    margin-left: 30px;
     text-align: center;
-    font-size: 13px;
-    border: white;
-    border-right: 0.1px solid var(--border-color);
+    padding: 10px;
+    color: green;
+    cursor: pointer;
 }
 
-#formula-bar{
-    outline: none;
-    border: white;
-    width: 100vw;
-    padding: 5px;
+.sheet-list {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.sheet {
+    /* border: 0.1px solid black; */
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 14px;
+    cursor: pointer;
+}
+
+.active-sheet{
+    border-left: 0.1px solid var(--border-color);
+    border-right: 0.1px solid var(--border-color);
+    background-color: white;
+    color: green;
 }

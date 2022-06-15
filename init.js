@@ -32,10 +32,10 @@ function initGrid(){
 }
 
 initGrid();
-
+let sheetsDB = [];
 let db;
 function intiDB(){
-    db = [];
+    let newSheetDB = [];
     for(let i = 0; i<100; i++){
         let row = [];
         for(let j = 0; j<26; j++){
@@ -49,8 +49,11 @@ function intiDB(){
             }
             row.push(cellObject);
         }
-        db.push(row);
+        newSheetDB.push(row);
     }
+    db = newSheetDB;
+    sheetsDB.push(newSheetDB);
+    console.log(sheetsDB);
 }
 
 intiDB();
