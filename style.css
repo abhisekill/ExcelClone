@@ -36,7 +36,8 @@
 
 .menu-cont {
   border-bottom: 0.5px solid var(--border-color);
-  height: 30px;
+  height: 40px;
+  background-color: var(--cell-background-color);
 }
 
 .address-cont {
@@ -47,7 +48,7 @@
 .cell-cont {
   border: 0.5px solid var(--border-color);
   border-bottom: white;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 100px);
   overflow: auto;
   background-color: white;
   position: relative;
@@ -68,6 +69,8 @@
   min-height: 23px;
   width: 100px;
   outline: none;
+  font-size: 13px;
+  padding: 2px;
 }
 
 .top-left-cell {
@@ -168,4 +171,36 @@
     border-right: 0.1px solid var(--border-color);
     background-color: white;
     color: green;
+}
+
+.active-cell{
+  border: 2px solid green;
+}
+
+.active-cell-header{
+  background-color: var(--border-color);
+}
+
+.font-style{
+  border-right: 0.1px solid var(--border-color);
+  display: flex;
+  height: 100%;
+  width: 200px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.font-style div{
+  /* border: 0.1px solid; */
+  height: 60%;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.font-style div:hover{
+  background-color: var(--border-color);
+  border-radius: 5px;
 }

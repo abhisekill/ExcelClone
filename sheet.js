@@ -18,9 +18,9 @@ addSheet.addEventListener('click',(e)=>{
 
     // add event listener to each newly created sheet
     sheetListener(newSheet);
-
-    // add a newly created sheet to the DB
+    // clean the ui
     initUI();
+    // add a newly created sheet to the DB
     intiDB();
 })
 
@@ -31,6 +31,8 @@ function sheetListener(sheet){
             return;
         prevActiveSheet.classList.remove('active-sheet');
         sheet.classList.add('active-sheet');
+        // clean the ui
+        initUI();
         let curSheetId = sheet.getAttribute('sheetId'); 
         db = sheetsDB[curSheetId];
         // now update the ui
@@ -53,6 +55,14 @@ function initUI(){
         for(let j = 0; j<26; j++){
             const cell = document.querySelector(`div[rowid='${i}'][colid='${j}']`);
             cell.innerText = "";
+            cell.classList.remove('active-cell');
         }
     }
+    const prevTopAndLeftCell = document.querySelectorAll('.active-cell-header');
+    if(prevTopAndLeftCell[0]){
+        prevTopAndLeftCell[0].classList.remove('active-cell-header');
+        prevTopAndLeftCell[1].classList.remove('active-cell-header');
+    }
+    addressBar.value = "";
+    formulaInput.value = "";
 }

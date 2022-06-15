@@ -29,6 +29,26 @@ for(let i = 0; i<allCells.length; i++){
         // show formula in the UI
         const cellObject = db[rowId][colId];
         formulaInput.value = cellObject.formula;
+        // highlight the cell which is clicked
+        const prevCell = document.querySelector('.active-cell');
+        if(prevCell && prevCell != e.target){
+            prevCell.classList.remove('active-cell');
+        }
+        e.target.classList.add('active-cell');
+
+        const prevTopAndLeftCell = document.querySelectorAll('.active-cell-header');
+        if(prevTopAndLeftCell[0]){
+            prevTopAndLeftCell[0].classList.remove('active-cell-header');
+            prevTopAndLeftCell[1].classList.remove('active-cell-header');
+        }
+        const topRowCell = document.querySelector(`div[topRowCellId = '${colId}']`);
+        const leftColCell = document.querySelector(`div[leftColCellId = '${rowId}']`);
+        if(topRowCell.classList.contains('active-cell-header') 
+                && leftColCell.classList.contains('active-cell-header')){
+            return;
+        }
+        topRowCell.classList.add('active-cell-header');
+        leftColCell.classList.add('active-cell-header');
     })
 
     allCells[i].addEventListener('blur',(e)=>{

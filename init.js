@@ -6,14 +6,14 @@ function initGrid(){
     // top-row
     cellsContent += "<div class='top-row'>"
     for(let i = 0; i<26; i++){
-        cellsContent += `<div class='top-row-cell'>${String.fromCharCode(65+i)}</div>`
+        cellsContent += `<div class='top-row-cell' topRowCellId = '${i}'>${String.fromCharCode(65+i)}</div>`
     }
     cellsContent += "</div>";
 
     // left-column
     cellsContent += "<div class='left-col'>"
     for(let i = 0; i<100; i++){
-        cellsContent += `<div class='left-col-cell'>${1+i}</div>`
+        cellsContent += `<div class='left-col-cell' leftColCellId = '${i}'>${1+i}</div>`
     }
     cellsContent += "</div>"
 
