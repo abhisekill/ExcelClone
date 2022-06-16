@@ -35,6 +35,7 @@
 }
 
 .menu-cont {
+  display: flex;
   border-bottom: 0.5px solid var(--border-color);
   height: 40px;
   background-color: var(--cell-background-color);
@@ -181,7 +182,7 @@
   background-color: var(--border-color);
 }
 
-.font-style {
+.font-style,.horizontal-align {
   border-right: 0.1px solid var(--border-color);
   display: flex;
   height: 100%;
@@ -190,8 +191,7 @@
   align-items: center;
 }
 
-.font-style div {
-  /* border: 0.1px solid; */
+.font-style div, .horizontal-align div {
   height: 60%;
   width: 20%;
   display: flex;
@@ -200,12 +200,12 @@
   cursor: pointer;
 }
 
-.font-style div:hover {
+.font-style div:hover , .horizontal-align div:hover{
   background-color: var(--border-color);
   border-radius: 5px;
 }
 
-.active-font-style {
+.active-menu-option {
   background-color: var(--border-color);
   border-radius: 5px;
 }

@@ -67,7 +67,10 @@ function initUI() {
     formulaInput.value = "";
 
 
-    document.querySelector('.bold').classList.remove('active-font-style');
-    document.querySelector('.italic').classList.remove('active-font-style');
-    document.querySelector('.underline').classList.remove('active-font-style');
+    document.querySelector('.bold').classList.remove('active-menu-option');
+    document.querySelector('.italic').classList.remove('active-menu-option');
+    document.querySelector('.underline').classList.remove('active-menu-option');
+    const prevActiveAlignment = document.querySelector('.horizontal-align .active-menu-option');
+    prevActiveAlignment.classList.remove('active-menu-option');
+    document.querySelector('.left').classList.add('active-menu-option');
 }

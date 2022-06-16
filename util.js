@@ -33,7 +33,10 @@ function solveFormula(formula, childCellObject) {
             }
             console.log(cellObject);
 
-            const value = cellObject.value;
+            let value = cellObject.value;
+            if(value == ""){
+                value = "0";
+            }
             formula = formula.replace(comp, value);
         }
     }

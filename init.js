@@ -50,7 +50,8 @@ function intiDB() {
                     bold: false,
                     italic: false,
                     underline: false
-                }
+                },
+                horizontalAlign:"left"
             }
             row.push(cellObject);
         }
