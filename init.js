@@ -51,7 +51,11 @@ function intiDB() {
                     italic: false,
                     underline: false
                 },
-                horizontalAlign:"left"
+                horizontalAlign:"left",
+                fontOption:{
+                    fontFamily:"sans-serif",
+                    fontSize:"13"
+                }
             }
             row.push(cellObject);
         }

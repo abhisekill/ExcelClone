@@ -73,4 +73,6 @@ function initUI() {
     const prevActiveAlignment = document.querySelector('.horizontal-align .active-menu-option');
     prevActiveAlignment.classList.remove('active-menu-option');
     document.querySelector('.left').classList.add('active-menu-option');
+    fontFamily.value = "sans-serif";
+    fontSize.value = "13";
 }

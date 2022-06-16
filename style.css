@@ -182,7 +182,7 @@
   background-color: var(--border-color);
 }
 
-.font-style,.horizontal-align {
+.font-style,.horizontal-align, .font-option{
   border-right: 0.1px solid var(--border-color);
   display: flex;
   height: 100%;
@@ -191,7 +191,7 @@
   align-items: center;
 }
 
-.font-style div, .horizontal-align div {
+.font-style div, .horizontal-align div{
   height: 60%;
   width: 20%;
   display: flex;
@@ -208,4 +208,29 @@
 .active-menu-option {
   background-color: var(--border-color);
   border-radius: 5px;
+}
+
+.font-option{
+  width: 300px;
+}
+.font-option div{
+  border: 0.1px solid;
+  width: 100%;
+}
+
+select{
+  height: 55%;
+  font-size: 12px;
+  outline: none;
+  border-radius: 5px;
+}
+
+#font-family{
+  width: 50%;
+  margin: 20px;
+}
+
+#font-size{
+  width: 15%;
+  margin-right: 20px;
 }

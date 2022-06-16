@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
     <title>Excel</title>
 </head>
+
 <body>
     <div class="menu-cont">
         <div class="font-style">
@@ -19,6 +23,20 @@
             <div class="left active-menu-option"><i class="fa-solid fa-align-left"></i></div>
             <div class="center"><i class="fa-solid fa-align-center"></i></div>
             <div class="right"><i class="fa-solid fa-align-right"></i></div>
+        </div>
+        <div class="font-option">
+            <select id="font-family">
+                <option value="sans-serif" style="font-family:sans-serif;">Sans Serif</option>
+                <option value="roboto" style="font-family:roboto;">Roboto</option>
+                <option value="impact" style="font-family:impact;">Impact</option>
+            </select>
+            <select id="font-size">
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+            </select>
+            
         </div>
     </div>
 
@@ -32,7 +50,7 @@
             <i class="fa-solid fa-plus"></i>
         </div>
         <div class="sheet-list">
-            <div class="sheet active-sheet" sheetId = '0'>Sheet1</div>
+            <div class="sheet active-sheet" sheetId='0'>Sheet1</div>
         </div>
     </div>
 
@@ -43,4 +61,5 @@
     <script src="./util.js"></script>
     <script src="./script.js"></script>
 </body>
+
 </html>

@@ -5,6 +5,8 @@ const topLeftCell = document.querySelector('.top-left-cell');
 const allCells = document.querySelectorAll('.cell');
 const addressBar = document.querySelector('#address-bar')
 const formulaInput = document.querySelector("#formula-bar");
+const fontFamily = document.querySelector('#font-family');
+const fontSize = document.querySelector('#font-size');
 
 let lastSelectedCell;
 
@@ -62,7 +64,9 @@ for (let i = 0; i < allCells.length; i++) {
         prevActiveAlignment.classList.remove('active-menu-option');
         const alignType = cellObject.horizontalAlign;
         document.querySelector(`.${alignType}`).classList.add('active-menu-option');
-        
+        // font options
+       fontFamily.value = cellObject.fontOption.fontFamily;
+       fontSize.value = cellObject.fontOption.fontSize;
     })
 
     allCells[i].addEventListener('blur', (e) => {

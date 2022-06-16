@@ -4,6 +4,7 @@ const underline = document.querySelector('.underline');
 const alignLeft = document.querySelector('.left');
 const alignCenter = document.querySelector('.center');
 const alignRight = document.querySelector('.right');
+const select = document.querySelectorAll('select');
 
 bold.addEventListener('click', () => {
     setFontStyle("bold", bold);
@@ -28,6 +29,27 @@ alignCenter.addEventListener('click',()=>{
 alignRight.addEventListener('click',()=>{
     setHorizontalAlignment('right',alignRight);
 })
+
+for(let i = 0; i<select.length; i++){
+    select[i].addEventListener('change',(e)=>{
+        console.log(e.target.value);
+        setFontOption(e.target,e.target.value);
+    })
+}
+
+function setFontOption(element,fontOption){
+    if(lastSelectedCell){
+        const {rowId,colId} = getRowIdColId(lastSelectedCell);
+        const cellObject = db[rowId][colId];
+        if(element.id == 'font-family'){
+            lastSelectedCell.style.fontFamily = fontOption;
+            cellObject.fontOption.fontFamily = fontOption;
+        }else{
+            lastSelectedCell.style.fontSize = fontOption + "px";
+            cellObject.fontOption.fontSize = fontOption;
+        }
+    }
+}
 
 function setFontStyle(styleName, element) {
     if (lastSelectedCell) {
