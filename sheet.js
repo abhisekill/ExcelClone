@@ -46,6 +46,8 @@ function setUI() {
             const cell = document.querySelector(`div[rowid='${i}'][colid='${j}']`);
             const cellObj = db[i][j];
             cell.innerText = cellObj.value;
+            cell.style.backgroundColor = cellObj.backgroundColor;
+            cell.style.color = cellObj.textColor;
         }
     }
 }
@@ -56,6 +58,8 @@ function initUI() {
             const cell = document.querySelector(`div[rowid='${i}'][colid='${j}']`);
             cell.innerText = "";
             cell.classList.remove('active-cell');
+            cell.style.backgroundColor = "#ffffff";
+            cell.style.color = "#000000";
         }
     }
     const prevTopAndLeftCell = document.querySelectorAll('.active-cell-header');
@@ -75,4 +79,6 @@ function initUI() {
     document.querySelector('.left').classList.add('active-menu-option');
     fontFamily.value = "sans-serif";
     fontSize.value = "13";
+    textColor.value = "#000000";
+    backgroundColor.value = "#ffffff";
 }

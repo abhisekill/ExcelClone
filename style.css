@@ -34,6 +34,41 @@
   font-size: 0.85rem;
 }
 
+.header{
+  height: 40px;
+  background-color: darkgreen;
+}
+
+.header ul{
+  display: flex;
+  width: 300px;
+  height: 100%;
+  justify-content: space-around;
+  align-items:flex-end;
+  list-style: none;
+}
+
+li{
+  /* border: 0.1px solid white; */
+  font-size: 13px;
+  color: white;
+  padding-bottom: 8px;
+}
+
+ul li:first-child{
+  padding: 5px;
+  color: black;
+  background-color: white;
+}
+
+.title{
+  position: absolute;
+  top: 5px;
+  left: 47vw;
+  font-size: 16px;
+  color: white;
+}
+
 .menu-cont {
   display: flex;
   border-bottom: 0.5px solid var(--border-color);
@@ -49,7 +84,7 @@
 .cell-cont {
   border: 0.5px solid var(--border-color);
   border-bottom: white;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 140px);
   overflow: auto;
   background-color: white;
   position: relative;
@@ -182,7 +217,7 @@
   background-color: var(--border-color);
 }
 
-.font-style,.horizontal-align, .font-option{
+.font-style,.horizontal-align, .font-option,.color-option{
   border-right: 0.1px solid var(--border-color);
   display: flex;
   height: 100%;
@@ -191,7 +226,7 @@
   align-items: center;
 }
 
-.font-style div, .horizontal-align div{
+.font-style div, .horizontal-align div,.color-option div{
   height: 60%;
   width: 20%;
   display: flex;
@@ -233,4 +268,8 @@ select{
 #font-size{
   width: 15%;
   margin-right: 20px;
+}
+
+.color-option div input{
+  margin: 5px;
 }

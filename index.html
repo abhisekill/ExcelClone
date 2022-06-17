@@ -9,10 +9,22 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
-    <title>Excel</title>
+    <title>Excel Clone</title>
 </head>
 
 <body>
+    <div class="header">
+        <ul>
+            <li>Home</li>
+            <li>Insert</li>
+            <li>View</li>
+            <li>Help</li>
+        </ul>
+        <div class="title">
+            <i class="fa-regular fa-file-excel" style="font-size: 25px;"></i>
+            Excel Clone
+        </div>
+    </div>
     <div class="menu-cont">
         <div class="font-style">
             <div class="bold"><i class="fa-solid fa-bold"></i></div>
@@ -36,7 +48,16 @@
                 <option value="16">16</option>
                 <option value="18">18</option>
             </select>
-            
+        </div>
+        <div class="color-option">
+            <div class="text-color">
+                <i class="fa-solid fa-font"></i>
+                <input type="color" id="text-color-palette">
+            </div>
+            <div class="fill-color">
+                <i class="fa-solid fa-fill-drip"></i>
+                <input type="color" id="fill-color-palette" value="#ffffff">
+            </div>
         </div>
     </div>
 

@@ -5,6 +5,7 @@ const alignLeft = document.querySelector('.left');
 const alignCenter = document.querySelector('.center');
 const alignRight = document.querySelector('.right');
 const select = document.querySelectorAll('select');
+const inputColorOptions = document.querySelectorAll('input[type="color"]');
 
 bold.addEventListener('click', () => {
     setFontStyle("bold", bold);
@@ -34,6 +35,13 @@ for(let i = 0; i<select.length; i++){
     select[i].addEventListener('change',(e)=>{
         console.log(e.target.value);
         setFontOption(e.target,e.target.value);
+    })
+}
+
+for(let i = 0; i<inputColorOptions.length; i++){
+    inputColorOptions[i].addEventListener('blur',(e)=>{
+        console.log(e.target.value);
+        setColorOption(e.target,e.target.value);
     })
 }
 
@@ -98,5 +106,19 @@ function setHorizontalAlignment(alignName,element){
         const prevActiveAlignment = document.querySelector('.horizontal-align .active-menu-option');
         prevActiveAlignment.classList.remove('active-menu-option');
         element.classList.add('active-menu-option');
+    }
+}
+
+function setColorOption(element,colorOption){
+    if(lastSelectedCell){
+        const {rowId,colId} = getRowIdColId(lastSelectedCell);
+        const cellObject = db[rowId][colId];
+        if(element.id == 'text-color-palette'){
+            lastSelectedCell.style.color = colorOption;
+            cellObject.textColor = colorOption;
+        }else{
+            lastSelectedCell.style.backgroundColor = colorOption;
+            cellObject.backgroundColor = colorOption;
+        }
     }
 }

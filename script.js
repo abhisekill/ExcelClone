@@ -7,6 +7,8 @@ const addressBar = document.querySelector('#address-bar')
 const formulaInput = document.querySelector("#formula-bar");
 const fontFamily = document.querySelector('#font-family');
 const fontSize = document.querySelector('#font-size');
+const textColor = document.querySelector('#text-color-palette');
+const backgroundColor = document.querySelector('#fill-color-palette');
 
 let lastSelectedCell;
 
@@ -65,8 +67,11 @@ for (let i = 0; i < allCells.length; i++) {
         const alignType = cellObject.horizontalAlign;
         document.querySelector(`.${alignType}`).classList.add('active-menu-option');
         // font options
-       fontFamily.value = cellObject.fontOption.fontFamily;
-       fontSize.value = cellObject.fontOption.fontSize;
+        fontFamily.value = cellObject.fontOption.fontFamily;
+        fontSize.value = cellObject.fontOption.fontSize;
+        //color options
+        textColor.value = cellObject.textColor;
+        backgroundColor.value = cellObject.backgroundColor;
     })
 
     allCells[i].addEventListener('blur', (e) => {

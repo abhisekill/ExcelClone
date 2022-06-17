@@ -55,7 +55,9 @@ function intiDB() {
                 fontOption:{
                     fontFamily:"sans-serif",
                     fontSize:"13"
-                }
+                },
+                textColor:"#000000",
+                backgroundColor:"#ffffff"
             }
             row.push(cellObject);
         }
