@@ -22,6 +22,7 @@ addSheet.addEventListener('click', (e) => {
     initUI();
     // add a newly created sheet to the DB
     intiDB();
+    setUI();
 })
 
 function sheetListener(sheet) {
