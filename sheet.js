@@ -48,6 +48,25 @@ function setUI() {
             cell.innerText = cellObj.value;
             cell.style.backgroundColor = cellObj.backgroundColor;
             cell.style.color = cellObj.textColor;
+            cell.style.fontFamily = cellObj.fontOption.fontFamily;
+            cell.style.fontSize = cellObj.fontOption.fontSize + "px";
+            cell.style.textAlign = cellObj.horizontalAlign;
+
+            if(cellObj.fontStyle.bold){
+                cell.style.fontWeight = 'bold';
+            }else{
+                cell.style.fontWeight = 'normal';
+            }
+            if(cellObj.fontStyle.italic){
+                cell.style.fontStyle = 'italic';
+            }else{
+                cell.style.fontStyle = 'normal';
+            }
+            if(cellObj.fontStyle.underline){
+                cell.style.textDecoration = 'underline';
+            }else{
+                cell.style.textDecoration = 'none';
+            }
         }
     }
 }
